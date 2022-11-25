@@ -33,11 +33,11 @@ var res =0;
 
 function winner1(){
     document.getElementById('win').innerHTML += "<h1>Player 1 Win!</h1>"
-    turns = 10;
+    turns += 10;
 }
 function winner2(){
     document.getElementById('win').innerHTML += "<h1>Player 2 Win!</h1>"
-    turns = 10;
+    turns += 10;
 }
 
 //pls self dont foget this this is really important
