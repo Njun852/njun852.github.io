@@ -1,0 +1,168 @@
+#grid-layout{
+    display: grid;
+    border: 3px solid;
+    width: 20em;
+    height: 26em;
+    margin: auto;
+    background-color: blue;
+    position: relative;
+    user-select: none;
+}
+
+#title{
+    text-align: center;
+}
+
+@media (max-width:400px){
+    #grid-layout{
+        width: 300px;
+        background-color: red;
+    }
+}
+
+#n {
+    width: 95%;
+    height: 4em;
+    border: 2px solid;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2px;
+    background-color: white;
+}
+
+.button {
+    border: 2px solid;
+    width: 95%;
+    height: 21em;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: gray;
+    
+}
+
+#clear{
+    border: 2px solid;
+    width: 25%;
+    height: 18%;
+    margin-left: 74%;
+}
+
+#clear > *{
+    font-size: 2em;
+    margin-left: 15%;
+    margin-top: 15%;
+    padding: 0;
+    
+   
+}
+
+#divide {
+    border: 2px solid;
+    width: 25%;
+    height: 18%;
+    margin-left: 74%;
+}
+#minus {
+    border: 2px solid;
+    width: 25%;
+    height: 18%;
+    margin-left: 74%;
+}
+#times {
+    border: 2px solid;
+    width: 25%;
+    height: 18%;
+    margin-left: 74%;
+}
+#plus {
+    border: 2px solid;
+    width: 25%;
+    height: 22%;
+    margin-left: 74%;
+}
+
+.num {
+    position: absolute;
+    margin-top: 23%;
+    margin-left: 2%;
+    width: 14rem;
+    height: 21rem;
+    border: 2px solid;
+}
+
+#seven, #four, #one, #zero{
+    border: 2px solid;
+    width: 4.5rem;
+    height: 5rem;
+}
+#eight, #five, #two, #dot{
+    border: 2px solid;
+    width: 4.3rem;
+    height: 5rem;
+    left: 33%;
+    top: 0%;
+    position: absolute;
+}
+#five {
+    top: 25%;
+}
+#two {
+    top: 50%;
+}
+#dot {
+    top: 75%;
+}
+#nine, #six, #three, #equal{
+    border: 2px solid;
+    width: 4.7rem;
+    height: 5rem;
+    left: 65%;
+    top: 0%;
+    position: absolute;
+}
+#six{
+    top: 25%;
+}
+#three {
+    top: 50%;
+}
+#equal {
+    top: 75%;
+}
+.digit{
+    
+    font-weight: 20%;
+    font-size: 2em;
+    margin-left: 35%;
+}
+body{
+    background-color: cyan;
+}
+.button {
+    cursor: pointer;
+}
+.num {
+    cursor: pointer;
+}
+#screen{
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 3px;
+    position: relative;
+    top: 20%;
+    
+}
+#ans{
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 3px;
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    
+    
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cal.css">
+    <title>Document</title>
+</head>
+<body>
+    <header><h1 id="title">Calculator</h1></header>
+    <div id="grid-layout">
+        <div id="last">
+            <h1 id="ans"></h1>
+        </div>
+        
+        <div id="n">
+            <div id="screen"></div>
+        </div>
+        <div class="button">
+        <div id="clear"><h1>AC</h1></div>
+        <div id="divide"><svg height="3em" width="4em">
+        <circle cx="58%" cy="30%" r="5px"/>
+            <line x1="10px" y1="30px" x2="60px" y2="30px"
+            style="stroke:black; stroke-linecap: round;
+            stroke-width: 3px"/>
+            <circle cx="58%" cy="90%" r="5px"/>
+        </svg></div>
+        <div id="minus"><svg height="3em" width="4em">
+            <line x1="10px" y1="30px" x2="60px" y2="30px"
+            style="stroke:black; stroke-linecap: round;
+            stroke-width: 3px"/>
+        </svg></div>
+        <div id="times"><svg height="3em" width="4em">
+            <line x1="10px" y1="10px" x2="60px" y2="45px"
+            style="stroke:black; stroke-linecap: round;
+            stroke-width: 3px"/>
+            <line x1="60px" y1="10px" x2="10px" y2="45px"
+            style="stroke:black; stroke-linecap: round;
+            stroke-width: 3px"/>
+        </svg></div>
+        <div id="plus"><svg height="5em" width="4em">
+            <line x1="35px" y1="10px" x2="35px" y2="85%"
+            style="stroke: black; stroke-linecap: round;
+            stroke-width: 3px;"/>
+            <line x1="10px" y1="40px" x2="60px" y2="40px"
+            style="stroke:black; stroke-linecap: round;
+            stroke-width: 3px"/>
+        </svg></div>
+        
+        </div>
+        <div class="num">
+            <div id="seven"><h1 class="digit">7</h1></div>
+            <div id="eight"><h1 class="digit">8</h1></div>
+            <div id="nine"><h1 class="digit">9</h1></div>
+            <div id="four"><h1 class="digit">4</h1></div>
+            <div id="five"><h1 class="digit">5</h1></div>
+            <div id="six"><h1 class="digit">6</h1></div>
+            <div id="one"><h1 class="digit">1</h1></div>
+            <div id="two"><h1 class="digit">2</h1></div>
+            <div id="three"><h1 class="digit">3</h1></div>
+            <div id="zero"><h1 class="digit">0</h1></div>
+            <div id="dot"><h1 class="digit">.</h1></div>
+            <div id="equal"><h1 class="digit">=</h1></div>
+        </div>
+    </div>
+</body>
+<script src="cal.js"></script>
+</html>
