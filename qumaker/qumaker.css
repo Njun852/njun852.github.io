@@ -57,7 +57,7 @@
     color: white;
     position: absolute;
     top: 40%;
-    left: 10%;
+    left: 28%;
    
 }
 #answer{
@@ -111,12 +111,12 @@
         width: 100%;
         left: 0%;
         top: 0;
-        height: 100%;
+        height: 108%;
     }
     #total >*{
         font-size: 5em;
-        left: 15%;
-        top: 25%;
+        left: 5%;
+        top: 30%;
     }
 }
 
