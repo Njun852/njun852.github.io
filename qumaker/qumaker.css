@@ -89,7 +89,7 @@
 
 
 
-@media (max-width: 350px){
+@media (max-width: 400px){
     #label{
         width: 95%;
         transform: translateX(2.5%) translateY(10%);
