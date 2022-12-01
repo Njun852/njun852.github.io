@@ -1,103 +1,315 @@
-var ans1 = document.getElementById("ans1");
-var ans2 = document.getElementById("ans2");
-var ans3 = document.getElementById("ans3");
-var ans4 = document.getElementById("ans4");
-var label = document.getElementById("label")
-var container = document.getElementById("container")
+var question;
+var count = 1;
+var choice = 0
+var right = 'You are correct!\n\n(click to continue)'
+var wrong = 'You are wrong! \n\n (click to continue)'
+var score = 0;
+
+
+//settings for start and label
+var start_scene = document.getElementById('start')
+var label = document.getElementById('label')
+label.style.opacity = 0
+
+//settings for question and answer
+var first_question = 'What color is the sun?'
+var second_question = 'What color is the sky?'
+var third_question = 'What color is the moon?'
+var fourth_question = 'What color is the basketball?'
+var fifth_question = 'What color is the desert?'
+
+var q = document.createElement('p')//for questions
+var a1 = document.createElement('p')//for multiple answers
+var a2 = document.createElement('p')//for multiple answers
+var a3 = document.createElement('p')//for multiple answers
+var a4 = document.createElement('p')//for multiple answers
+
+//accesing element from the html and storing it here
+var first_answer = document.getElementById('ans1')
+var second_answer = document.getElementById('ans2')
+var third_answer = document.getElementById('ans3')
+var fourth_answer = document.getElementById('ans4')
+first_answer.style.opacity = '0'
+second_answer.style.opacity = '0'
+third_answer.style.opacity = '0'
+fourth_answer.style.opacity = '0'
+
+
+//for result
+var result = document.createElement('div')
+var result_text = document.createElement('p')
+result.setAttribute('id', 'result')
+result.style.opacity = '0'
 
 
 
 
-function change(){
-        //for animation
-    document.getElementById("label").style.animation = "fade-out 2s";
-    ans1.style.animation = "fade-out 1s";
-    ans2.style.animation = "fade-out 1.3s";
-    ans3.style.animation = "fade-out 1.5s";
-    ans4.style.animation = "fade-out 1.8s";
 
-//for changing
+
+
+function settingQuestion(){
+    //checking for code in line 14 where we set question to first or send or ect question
+    if(count == 1){
+        question = first_question
+    }else if(count == 2){
+        question = second_question
+    }
+    else if(count == 3){
+        question = third_question
+    }
+    else if(count == 4){
+        question = fourth_question
+    }
+    else if(count == 5){
+        question = fifth_question
+    }else{
+        return;
+    }
+    q.innerText = question
+    label.append(q)
+}
+
+function removeAnswer(){
+first_answer.remove()
+second_answer.remove()
+third_answer.remove()
+fourth_answer.remove()
+}
+
+function settingAnswer(){
+//setting for what shows up in the multiple answer
+if(count == 1){
+a1.innerText = 'Red'
+a2.innerText = 'Yellow'
+a3.innerText = 'Brown'
+a4 .innerText= 'Pink'
+}else if(count == 2){
+    a1.innerText = 'White'
+    a2.innerText = 'Pink'
+    a3.innerText = 'Skyblue'
+    a4.innerText = 'Orange'
+}else if(count == 3){
+    a1.innerText = 'White'
+    a2.innerText = 'Blue'
+    a3.innerText = 'Amongus'
+    a4.innerText = 'Pink'
+}
+else if(count == 4){
+    a1.innerText = 'White'
+    a2.innerText = 'Orange'
+    a3.innerText = 'Black'
+    a4.innerText = 'Pink'
+}
+else if(count == 5){
+    a1.innerText = 'Yellow'
+    a2.innerText = 'Red'
+    a3.innerText = 'Black'
+    a4.innerText = 'Pink'
+}
+//setting up
+first_answer.append(a1)
+second_answer.append(a2)
+third_answer.append(a3)
+fourth_answer.append(a4)
+
+//for animations
+
+
+}
+
+function startingAnswer(){
     setTimeout(function(){
-        
-        ans1.style.display = "none";
-    },1000);
+        first_answer.style.animation = 'fade-in 0.5s'
+    }, 500)
     setTimeout(function(){
-        
-        ans2.style.display = "none";
-    },1300);
+        second_answer.style.animation = 'fade-in 0.5s'
+    }, 700)
     setTimeout(function(){
-        ans3.style.display = "none";
-    },1500);
+        third_answer.style.animation = 'fade-in 0.5s'
+    }, 800)
     setTimeout(function(){
-        ans4.style.display = "none";
-    },1800);
-    setTimeout(function(){
-        label.style.display = "none";
-    },2000);
-   
-        
-}   
+        fourth_answer.style.animation = 'fade-in 0.5s'
+    }, 900)
 
-function result(){
-    container.innerHTML += '<div id="total"  style="opacity: 100;"><div id="score"><span>You are correct!</span></div></div>'
+setTimeout(function(){
+first_answer.style.opacity = '100'
+second_answer.style.opacity = '100'
+third_answer.style.opacity = '100'
+fourth_answer.style.opacity = '100'
+}, 1000)
+}
 
+
+
+function pressingStart(){
+    //execute when u press start
+    start_scene.style.animation = 'fade-out 0.5s'
+    setTimeout(function(){
+        start_scene.remove()
+    }, 400)
+}
+
+function startingQuestion(){
+    //setting opening animation for label
+    setTimeout(function(){
+        label.style.animation = 'fade-in 0.5s'
+    }, 600)
+    //saving opening animation for label
+    setTimeout(function(){
+        label.style.opacity = '100'
+    }, 700)
+    console.log(count)
+
+}
+
+
+function stopquiz(){
+
+}
+function checkingAnswer(){
+
+    if(count == 1 && choice == 2){
+        result.style.backgroundColor = 'green'
+        result_text.innerText = right
+        ++score
+    }else if(count == 2 && choice == 3){
+        result.style.backgroundColor = 'green'
+        result_text.innerText = right
+        ++score
+    }
+    else if(count == 3 && choice == 1){
+        result.style.backgroundColor = 'green'
+        result_text.innerText = right
+        ++score
+    }
+    else if(count == 4 && choice == 2){
+        result.style.backgroundColor = 'green'
+        result_text.innerText = right
+        ++score
+    }
+    else if(count == 5 && choice == 1){
+        result.style.backgroundColor = 'green'
+        result_text.innerText = right
+        ++score
+    }else{
+        result_text.innerText = wrong
+        result.style.backgroundColor = 'orange'
+    }
+
+
+    result.append(result_text)
+    container.append(result)
+
+}
+function endingQuiz(){
+    if(count == 6){
+        result_text.innerText = 'Quiz done! \n\n Your score is: '+score+'/5'
+        result.removeEventListener('click', closingAnswer)
+ result.removeEventListener('click', startingQuestion)//not this
+ result.removeEventListener('click', settingQuestion)//not this
+ result.removeEventListener('click', settingAnswer)
+ result.removeEventListener('click', startingAnswer)
+    }
+
+    result.append(result_text)
+    container.append(result)
+}
+
+function showingAnswer(){
+    setTimeout(function(){
+    result.style.animation = 'fade-in 0.5s'
+}, 400)
+setTimeout(function(){
+    result.style.opacity = '100'   
+}, 500)
+setTimeout(function(){
+    result.style.animation = null   
+}, 600)
+
+}
+
+//closes the thing after u click the thing lol
+function closingAnswer(){
+        result.style.animation = 'fade-out 0.5s'
+    setTimeout(function(){
+        result.remove()
+    }, 400)
+    setTimeout(function(){
+        result.style.opacity = '0'
+    }, 500)
+    setTimeout(function(){
+        result.style.animation = null   
+    }, 600)
+    console.log('this happened')
     
 }
-function result2(){
 
-        container.innerHTML += '<div id="total" style="opacity: 100;" ><div id="score"><span>You are wrong!</span></div></div>'
+//ralated to the multiple choices
+function choice1(){
+   choice = 1
+}
+function choice2(){
+    choice = 2
+}
+function choice3(){
+    choice = 3
+ }
+ function choice4(){
+    choice = 4
+ }
+
+
+start_scene.addEventListener('click', pressingStart)
+start_scene.addEventListener('click', startingQuestion)
+start_scene.addEventListener('click', settingQuestion)
+start_scene.addEventListener('click', settingAnswer)
+start_scene.addEventListener('click', startingAnswer)
+start_scene.addEventListener('click', console.log(question))
+
+first_answer.addEventListener('click', choice1)//not this
+first_answer.addEventListener('click', checkingAnswer)//not this
+first_answer.addEventListener('click', e =>{
+    count += 1
+})
+first_answer.addEventListener('click', showingAnswer)
+
+
+
+second_answer.addEventListener('click', choice2)
+second_answer.addEventListener('click', checkingAnswer)
+second_answer.addEventListener('click', e =>{
+    count += 1
+})
+second_answer.addEventListener('click', showingAnswer)
+
+
+
+third_answer.addEventListener('click', choice3)
+third_answer.addEventListener('click', checkingAnswer)
+third_answer.addEventListener('click', e =>{
+    count += 1
+})
+third_answer.addEventListener('click', showingAnswer)
+
+
+
+fourth_answer.addEventListener('click', choice4)
+fourth_answer.addEventListener('click', checkingAnswer)
+fourth_answer.addEventListener('click', e =>{
+    count += 1
+})
+fourth_answer.addEventListener('click', showingAnswer)
+
+
+function waw(){
+    console.log("the opacity is"+result.style.opacity)
 }
 
-ans1.addEventListener('click', e =>{
-    change();
-
- })
-ans1.addEventListener('click', e =>{
-    result2();
-    
- })
- ans2.addEventListener('click', e =>{
-    document.getElementById("total").style.opacity = 100;
-    
- })
-
- ans2.addEventListener('click', e =>{
-    change();
-
- })
-ans2.addEventListener('click', e =>{
-    result2();
-    
- })
- ans2.addEventListener('click', e =>{
-    document.getElementById("total").style.opacity = 100;
-    
- })
-
- ans3.addEventListener('click', e =>{
-    change();
-
- })
-ans3.addEventListener('click', e =>{
-    result2();
-    
- })
- ans3.addEventListener('click', e =>{
-    document.getElementById("total").style.opacity = 100;
-    
- })
-
- ans4.addEventListener('click', e =>{
-    change();
-
- })
-ans4.addEventListener('click', e =>{
-    result();
-    
- })
- ans4.addEventListener('click', e =>{
-    document.getElementById("total").style.opacity = 100;
-    
- })
-
+result.addEventListener('click', endingQuiz)
+result.addEventListener('click', waw)
+result.addEventListener('click', closingAnswer)
+result.addEventListener('click', startingQuestion)//not this
+result.addEventListener('click', settingQuestion)//not this
+result.addEventListener('click', settingAnswer)
+result.addEventListener('click', startingAnswer)//not this
 
