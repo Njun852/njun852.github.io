@@ -153,3 +153,23 @@ h1{
         left: 15%;
     }
 }
+
+#one, #two, #three, #four{
+    position: absolute;
+    height: 27.5em;
+    width: 18em;
+    top: 33%;
+    left: 10%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#two{
+    left: 31%;
+}
+#three{
+    left: 54%;
+}
+#four{
+    left: 75%;
+}
