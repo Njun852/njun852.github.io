@@ -121,6 +121,26 @@ h1{
     }
 }
 
+#one, #two, #three, #four{
+    position: absolute;
+    height: 27.5em;
+    width: 18em;
+    top: 33%;
+    left: 10%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#two{
+    left: 31%;
+}
+#three{
+    left: 54%;
+}
+#four{
+    left: 75%;
+}
+
 @media (max-width: 330px){
 
     .selection{
@@ -152,24 +172,23 @@ h1{
     header >*{
         left: 15%;
     }
+
+    #one, #two, #three, #four{
+        height: 10.5em;
+        width: 18em;
+        top: 33%;
+        left: 10%;
+
+    }
+
+    #two{
+        top: 66%;
+    }
+    #three{
+        top: 100%;
+    }
+    #four{
+        top: 133%;
+    }
 }
 
-#one, #two, #three, #four{
-    position: absolute;
-    height: 27.5em;
-    width: 18em;
-    top: 33%;
-    left: 10%;
-    opacity: 0;
-    cursor: pointer;
-}
-
-#two{
-    left: 31%;
-}
-#three{
-    left: 54%;
-}
-#four{
-    left: 75%;
-}
