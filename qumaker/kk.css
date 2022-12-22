@@ -36,7 +36,7 @@ grid-auto-rows: 30%;
 
 #contents> div{
     margin-left: 25%;
-    height: 50%;
+    height: 60%;
     width: 50%;
 
 }
@@ -55,7 +55,7 @@ p{
 img{
     margin-left: 10%;
     width: 80%;
-    height: 3em;
+    height: 4em;
     transition: 0.3 ease-in-out;
     cursor: pointer;
 }
