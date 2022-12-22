@@ -23,7 +23,6 @@ body{
     height: 100%;
     width: 43.2vh;
     left:-100%;
-    border: 4px solid;
     background-color: #ffec8f;
 
 }
@@ -80,7 +79,7 @@ img:hover{
 
 #side-menu{
     position: relative;
-    width: 97%;
+    width: 97.4%;
     height: 7%;
     
     border: 4px solid;
