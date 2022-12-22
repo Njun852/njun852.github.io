@@ -19,6 +19,7 @@ body{
 }
 
 #side{
+    border: 4px solid;
     position: fixed;
     height: 100%;
     width: 43.2vh;
@@ -29,7 +30,6 @@ body{
 #contents{
 height: 100%;
 display: grid;
-border: 4px solid;
 grid-template-columns: 1fr;
 grid-auto-rows: 30%;
 }
@@ -55,7 +55,7 @@ p{
 img{
     margin-left: 10%;
     width: 80%;
-    height: 100%;
+    height: 3em;
     transition: 0.3 ease-in-out;
     cursor: pointer;
 }
@@ -79,10 +79,9 @@ img:hover{
 
 #side-menu{
     position: relative;
-    width: 97.4%;
-    height: 7%;
-    
-    border: 4px solid;
+    width: 100%;
+    height: 7.4%;
+    border-bottom: 4px solid;
 }
 
 #menu-text{
