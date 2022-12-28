@@ -1,0 +1,33 @@
+:root {
+
+    --turn: 105;
+    --color: gray;
+}
+svg{
+    scale: 500%;
+    position: absolute;
+    left: 43%;
+    top: 50%;
+    visibility: hidden;
+}
+
+#loading{
+ stroke: green;
+stroke-dasharray: 105;
+stroke-dashoffset: 105;
+stroke-linecap: round;
+
+
+}
+#outer{
+    stroke-linecap: round;
+}
+.load{
+    animation: load 0.5s linear forwards;
+}
+@keyframes load {
+    100%{
+        stroke: var(--color);
+        stroke-dashoffset: var(--turn);
+    }
+}
