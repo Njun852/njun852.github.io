@@ -109,13 +109,14 @@ for(let i = 0; i < ansList.length; i++){
             }
           }
 })}
+
 console.log(score)
 questions()
 let clickedOnce = false
 resultButton.addEventListener('click', function (){
         if(lastClick){
-            here.style.left = '43%'
             here.innerText = score+'/'+max_score
+            result.style.backgroundColor = '#ffec8f'
             loadbruh()
             svg.style.visibility = 'visible'
             animationTime(circle, 'load',200, 'add')

@@ -48,8 +48,8 @@ function sidebar(){
 //for menu icon
 function icon(){
     if(!show){
-        animate(top2, 'move 0.3s')
-        animate(bot, 'move 0.3s')
+        animate(top2, 'move 0.3s forwards')
+        animate(bot, 'move 0.3s forwards')
         timing(mid, 'opacity', '0', 290)
         timing(top2, 'top', '40%', 290)
         timing(bot, 'top', '40%', 290)
@@ -57,28 +57,28 @@ function icon(){
         animate(top2, 'topx 0.3s forwards')
         animate(bot, 'botx 0.3s forwards')
     }, 300)
-    timing(top2, 'transform', 'rotate(-40deg)', 610)
-    timing(bot, 'transform', 'rotate(40deg)', 610)
+    timing(top2, 'transform', 'rotate(-40deg)', 600)
+    timing(bot, 'transform', 'rotate(40deg)', 600)
     setTimeout(function(){
         show2 = true
-    }, 610)
+    }, 600)
     
     }else{
     top2.style.removeProperty('animation')
     bot.style.removeProperty('animation')
       setTimeout(function(){
-        animate(top2, 'menu 0.3s')
-        animate(bot, 'menu 0.3s')
+        animate(top2, 'menu 0.3s forwards')
+        animate(bot, 'menu 0.3s forwards')
       }, 100)
-      timing(top2, 'transform', 'rotate(0deg)', 310)
-      timing(bot, 'transform', 'rotate(0deg)', 310)
-      timing(mid, 'opacity', '1', 310)
+      timing(top2, 'transform', 'rotate(0deg)', 300)
+      timing(bot, 'transform', 'rotate(0deg)', 300)
+      timing(mid, 'opacity', '1', 300)
       setTimeout(function(){
         animate(top2, 'movetop 0.3s forwards')
         animate(bot, 'movebot 0.3s forwards')
       }, 320)
-      timing(top2, 'top', '5%', 610)
-      timing(bot, 'top', '75%', 610)
+      timing(top2, 'top', '5%', 600)
+      timing(bot, 'top', '75%', 600)
       show2 = false
     }
   

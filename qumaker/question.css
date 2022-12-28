@@ -197,6 +197,7 @@ img:hover{
     animation: slideback 0.3s ease-in-out forwards;
 }
 
+
 @keyframes move {100%{top:40%}}
 @keyframes movebot{100%{top:75%}}
 @keyframes movetop{100%{top:5%}}
@@ -205,19 +206,5 @@ img:hover{
 @keyframes menu{100%{transform: rotate(0deg);}}
 
 
-@media (max-width: 600px) {
-    #show-result {
-      width: 90%;
-      margin-left: 5%;
-    }
-    .here {
-      left: 25%;
-    }
-    .here2 {
-      left: 30%;
-    }
-    #button {
-      width: 8em;
-    }
-  }
+
   

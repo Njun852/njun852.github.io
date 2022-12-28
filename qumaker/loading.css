@@ -4,11 +4,14 @@
     --color: gray;
 }
 svg{
-    scale: 500%;
+    width: 150%;
+    height: 150%;
     position: absolute;
-    left: 43%;
-    top: 50%;
+    
+    left:-25%;
+    top: 0%;
     visibility: hidden;
+   
 }
 
 #loading{
