@@ -56,7 +56,7 @@ function icon(){
         setTimeout(function(){
         animate(top2, 'topx 0.3s forwards')
         animate(bot, 'botx 0.3s forwards')
-    }, 310)
+    }, 300)
     timing(top2, 'transform', 'rotate(-40deg)', 610)
     timing(bot, 'transform', 'rotate(40deg)', 610)
     setTimeout(function(){
