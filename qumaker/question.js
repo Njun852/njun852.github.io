@@ -146,7 +146,7 @@ function replaceAnimation(element, last, New, delay = 0){
 }
 function DOMopen(){
     animationTime(result, 'scale-out-center')
-    animationTime(question, 'scale-in-center', 100)
+    animationTime(question, 'scale-in-ver-top', 100)
     replaceAnimation(ans1, 'scale-out-center', 'scale-in-center', 400)
     replaceAnimation(ans2, 'scale-out-center', 'scale-in-center', 600)
     replaceAnimation(ans3, 'scale-out-center', 'scale-in-center', 800)
