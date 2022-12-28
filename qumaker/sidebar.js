@@ -31,7 +31,7 @@ function sidebar(){
     setTimeout(function(){
         sideMenu.append(icons)
         show = true
-    }, 310)
+    }, 300)
     timing(icons,'float', 'right', 300)
     
     }else{
