@@ -27,7 +27,6 @@ body{
     transform: translateX(-100%);
     z-index: 3;
     background-color: #ffec8f;
-    
 
 }
 #contents{
@@ -55,15 +54,15 @@ p{
 }
 
 
-img{
+.yo{
     margin-left: 10%;
     width: 80%;
     height: 6em;
-    transition: 0.3s linear;
+    transition: 0.2s ease-in-out;
     cursor: pointer;
 }
 
-img:hover{
+.yo:hover{
     scale: 105%;
 }
 

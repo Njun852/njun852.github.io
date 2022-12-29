@@ -8,9 +8,31 @@ const mid = document.getElementById('mid')
 const bot = document.getElementById('bot')
 const sideMenu = document.getElementById('side-menu')
 
+const ppl = document.querySelector("#ppl")
+const contact = document.querySelector("#contact")
 
 var show = false
 var show2 = false
+home.addEventListener('click', ()=>{
+    window.location = "index.html"
+})
+function animationTime( element, classname, delay = 0, type = "fast"){
+    if(type === 'fast'){
+    setTimeout(function(){
+        element.className = classname
+    },delay)
+}else if(type == 'add'){
+    setTimeout(function(){
+        element.classList.add(classname)
+    },delay)
+}
+}
+
+function replaceAnimation(element, last, New, delay = 0){
+    setTimeout(function(){
+        element.classList.replace(last, New)
+    },delay)  
+}
 //for animation
 function animate(element, animation){
     element.style.animation = animation
@@ -41,8 +63,7 @@ function sidebar(){
        setTimeout(function(){
             head.append(icons)
             show = false;
-        }, 300)
-        
+        }, 300) 
     }
 }
 //for menu icon
@@ -62,7 +83,6 @@ function icon(){
     setTimeout(function(){
         show2 = true
     }, 600)
-    
     }else{
     top2.style.removeProperty('animation')
     bot.style.removeProperty('animation')
@@ -81,7 +101,6 @@ function icon(){
       timing(bot, 'top', '75%', 600)
       show2 = false
     }
-  
 }
 icons.addEventListener('click',e =>{
    icon()

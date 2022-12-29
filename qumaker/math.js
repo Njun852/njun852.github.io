@@ -17,37 +17,49 @@ let isClicked = false
 //for the question and answers
 const qna = {
     question1: {
-        question: "What is the color of the sun?",
-        right_answer: "Yellow",
+        question: "What is 1+1?",
+        right_answer: "2",
     },
     question2: {
-        question: 'What is the color of the sea?',
-        right_answer: "Blue"
+        question: 'What is 3+2?',
+        right_answer: "5"
     },
     question3: {
-        question: 'What is the color of the leaves?',
-        right_answer: "Green"
+        question: 'What is 5-5?',
+        right_answer: "0"
     },
     question4: {
-        question: 'What is the color of the fire?',
-        right_answer: "Red"
+        question: 'What is 6+2?',
+        right_answer: "8"
     },
     question5: {
-        question: 'What is the color of the moon?',
-        right_answer: "White"
+        question: 'What is 4-3?',
+        right_answer: "1"
     }, 
     question6: {
-        question: 'What is the color of the orange?',
-        right_answer: "Orange"
+        question: 'What is 2 X 2?',
+        right_answer: "4"
     }, 
     question7: {
-        question: 'What is the color of the cloud?',
-        right_answer: "White"
+        question: 'What is 3+8?',
+        right_answer: "11"
+    },
+    question8: {
+        question: 'What is 8-4?',
+        right_answer: "4"
+    },
+    question9: {
+        question: 'What is 10+10?',
+        right_answer: "20"
+    },
+    question10: {
+        question: 'What is 4 + 10?',
+        right_answer: "14"
     } 
 }
 let lastClick = false
 const questionArray = [qna.question1, qna.question2, qna.question3,
-    qna.question4, qna.question5, qna.question6,qna.question7]
+    qna.question4, qna.question5, qna.question6,qna.question7,qna.question8,qna.question9,qna.question10]
 const max_score = questionArray.length
 let indent = Math.floor(Math.random()*questionArray.length)
 
@@ -65,7 +77,7 @@ function questions(){
     }
 
 indent = Math.floor(Math.random()*questionArray.length)
-let choices = ["Red", "Pink", "Blue", "Orange", "Yellow", "Pink", "Black", "Green", "Brown"];
+let choices = ["6", "25", "3", "12", "64", "9", "21", "12", "3"];
 choices[0] = questionArray[indent].right_answer
 let unique = Array.from(new Set(choices))
 question.innerText = questionArray[indent].question
@@ -96,7 +108,6 @@ for(let i = 0; i < ansList.length; i++){
                 questions()
               }, 2000)
               score++
-            
             } else {
               console.log("'wrong")
               result.style.backgroundColor = '#ee1e0f'
@@ -104,30 +115,33 @@ for(let i = 0; i < ansList.length; i++){
               here.innerText = what
               setTimeout(function() {
                 questions()
-                
               }, 2000)
             }
           }
 })}
-
+function last(){
+    if(lastClick){
+        resultButton.innerText = 'Home'
+        resultButton.removeEventListener('click', last)
+        resultButton.addEventListener('click', function(){
+            window.location = 'index.html'
+        })
+        here.innerText = score+'/'+max_score
+        result.style.backgroundColor = '#ffec8f'
+        loadbruh()
+        svg.style.visibility = 'visible'
+        animationTime(circle, 'load',200, 'add')
+    }else{
+        DOMopen()
+    }
+clickedOnce = true  
+}
 console.log(score)
 questions()
 let clickedOnce = false
-resultButton.addEventListener('click', function (){
-        if(lastClick){
-            here.innerText = score+'/'+max_score
-            result.style.backgroundColor = '#ffec8f'
-            loadbruh()
-            svg.style.visibility = 'visible'
-            animationTime(circle, 'load',200, 'add')
-        }else{
-            DOMopen()
-        }
-    clickedOnce = true  
-})
+resultButton.addEventListener('click', last)
 
 function animationTime( element, classname, delay = 0, type = "fast"){
-
     if(type === 'fast'){
     setTimeout(function(){
         element.className = classname

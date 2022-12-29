@@ -22,5 +22,4 @@ let percent = TOTALTURN-(1.05*score);
 root.style.setProperty('--turn', percent)
 root.style.setProperty('--color', color)
 console.log(turn)
-
 }

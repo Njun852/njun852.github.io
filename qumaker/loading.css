@@ -15,7 +15,7 @@ svg{
 }
 
 #loading{
- stroke: green;
+stroke: green;
 stroke-dasharray: 105;
 stroke-dashoffset: 105;
 stroke-linecap: round;
