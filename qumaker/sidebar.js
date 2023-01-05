@@ -16,6 +16,12 @@ var show2 = false
 home.addEventListener('click', ()=>{
     window.location = "index.html"
 })
+ppl.addEventListener('click', ()=>{
+    window.location = 'about.html'
+})
+contact.addEventListener('click', ()=>{
+    window.location = 'contact.html'
+})
 function animationTime( element, classname, delay = 0, type = "fast"){
     if(type === 'fast'){
     setTimeout(function(){
@@ -106,6 +112,16 @@ icons.addEventListener('click',e =>{
    icon()
    sidebar()
 })
+//For Background Sound
+var mySong = document.getElementById("mySong");
+var butod = document.getElementById("button");
 
-
-
+butod.onclick = function(){
+if(mySong.paused){
+    mySong.play();
+    butod.src = "images/Unmute.png";
+}else{
+    mySong.pause();
+    butod.src = "images/Mute.png"
+}
+}

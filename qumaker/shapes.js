@@ -5,9 +5,11 @@ const ans2 = document.querySelector('#answer2')
 const ans3 = document.querySelector('#answer3')
 const ans4 = document.querySelector('#answer4')
 const result = document.querySelector('#show-result')
-const resultButton = document.querySelector('#button')
+const resultButton = document.querySelector('#next-button')
 const here = document.querySelector('#here')
 const svg = document.querySelector('#svg')
+const img = document.querySelector('#img')
+const label = document.querySelector("#questions")
 
 
 const ansList = [ans1, ans2, ans3, ans4]
@@ -19,47 +21,82 @@ const qna = {
     question1: {
         question: "What is the shape of a ball?",
         right_answer: "Circle",
+        img: "shapes/balls.png"
     },
     question2: {
         question: 'What is the shape of a door?',
-        right_answer: "Rectangle"
+        right_answer: "Rectangle",
+        img: "shapes/door.png"
     },
     question3: {
         question: 'What is the shape of a head?',
-        right_answer: "Circle"
+        right_answer: "Circle",
+        img: "shapes/Circle.png"
     },
     question4: {
         question: 'What is the shape of a coin?',
-        right_answer: "Circle"
+        right_answer: "Circle",
+        img: "shapes/coin.png"
     },
     question5: {
         question: 'What is the shape of a roof?',
-        right_answer: "Triangle"
+        right_answer: "Triangle",
+        img: "shapes/roof.png"
     }, 
     question6: {
         question: 'What is the shape of a pyramid?',
-        right_answer: "Triangle"
+        right_answer: "Triangle",
+        img: "shapes/Pyramid.png"
     }, 
     question7: {
         question: 'What is the shape of the planet?',
-        right_answer: "Circle"
+        right_answer: "Circle",
+        img: "shapes/planet.png"
     },
     question8: {
         question: 'What is the shape of a full moon?',
-        right_answer: "Circle"
+        right_answer: "Circle",
+        img: "shapes/Moon.png"
     },
     question9: {
         question: 'What is the shape of a monitor?',
-        right_answer: "Rectangle"
+        right_answer: "Rectangle",
+        img: "shapes/Monitor.png"
     },
     question10: {
         question: 'What is the shape of a window',
-        right_answer: "Square"
-    } 
+        right_answer: "Square",
+        img: "shapes/window.png"
+    },
+    question11: {
+        question: 'What is the name of this Shape?',
+        right_answer: "Circle",
+        img: "shapes/Circle.png"
+    },
+    question12: {
+        question: 'What shape that has no sides?',
+        right_answer: "Circle",
+        img: "shapes/Circle.png"
+    },
+    question13: {
+        question: 'What shape that has 8 sides?',
+        right_answer: "Octagon",
+        img: "shapes/octagon.png"
+    },
+    question14: {
+        question: 'What is the shape of the sun?',
+        right_answer: "Circle",
+        img: "shapes/sun.png"
+    },
+    question15: {
+        question: 'What shape that has 4 sides?',
+        right_answer: "Square",
+        img: "shapes/square.png"
+    }
 }
 let lastClick = false
 const questionArray = [qna.question1, qna.question2, qna.question3,
-    qna.question4, qna.question5, qna.question6,qna.question7,qna.question8,qna.question9,qna.question10]
+    qna.question4, qna.question5, qna.question6,qna.question7,qna.question8,qna.question9,qna.question10,qna.question11,qna.question12,qna.question13,qna.question14,qna.question15]
 const max_score = questionArray.length
 let indent = Math.floor(Math.random()*questionArray.length)
 
@@ -77,9 +114,10 @@ function questions(){
     }
 
 indent = Math.floor(Math.random()*questionArray.length)
-let choices = ["Square", "Oval", "Rectangle", "Triangle", "Circle", "Square", "Hexagon", "Pentagon", "Square"];
+let choices = ["Square", "Oval", "Rectangle", "Triangle", "Circle", "Square", "Hexagon", "Pentagon", "Square", "Octagon"];
 choices[0] = questionArray[indent].right_answer
 let unique = Array.from(new Set(choices))
+img.setAttribute('src', questionArray[indent].img)
 question.innerText = questionArray[indent].question
 unique = [unique[0], unique[Math.floor(Math.random()*(3 - 1))+1],
               unique[Math.floor(Math.random()*(5 - 4))+4],
@@ -161,7 +199,7 @@ function replaceAnimation(element, last, New, delay = 0){
 }
 function DOMopen(){
     animationTime(result, 'scale-out-center')
-    animationTime(question, 'scale-in-ver-top', 100)
+    animationTime(label, 'scale-in-ver-top', 100)
     replaceAnimation(ans1, 'scale-out-center', 'scale-in-center', 400)
     replaceAnimation(ans2, 'scale-out-center', 'scale-in-center', 600)
     replaceAnimation(ans3, 'scale-out-center', 'scale-in-center', 800)
@@ -183,14 +221,9 @@ function DOMclose(){
         animationTime( ans3, 'scale-out-center', 800 ,'add')
         animationTime( ans4, 'scale-out-center', 1000 ,'add')
     }
-    animationTime( question, 'slide-out-bck-center', 1300)
+    animationTime( label, 'slide-out-bck-center', 1300)
     animationTime(result, 'scale-in-center', 1800)
     animationTime(resultButton, 'fade-in', 1800)
     eventListen = false
 } 
-
-
-
-
-
 

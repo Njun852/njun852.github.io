@@ -1,4 +1,5 @@
 const circle = document.querySelector('#loading')
+const load = document.querySelector('.load')
 const root = document.documentElement
 const yo = circle.getTotalLength()
 //104.72478485107422104.72478485107422
@@ -13,6 +14,7 @@ let convert = 100/max_score
 score = score*convert
 if(score >= 70){
     color = 'green'
+ 
 }else if(score >= 50){
     color = 'yellow'
 }else{

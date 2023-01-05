@@ -19,6 +19,9 @@
   font-size: 50px;
   
 }
+#bio{
+  margin-top: 3em;
+}
 .img-topic{
   width: 20%;
   margin: 2%;
@@ -42,6 +45,3 @@
   }
 
 }
-
-
-

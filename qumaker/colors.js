@@ -1,14 +1,15 @@
 const content = document.getElementById('contents')
 const question = document.querySelector("#question-content")
+const label = document.querySelector("#questions")
 const ans1 = document.querySelector('#answer1')
 const ans2 = document.querySelector('#answer2')
 const ans3 = document.querySelector('#answer3')
 const ans4 = document.querySelector('#answer4')
 const result = document.querySelector('#show-result')
-const resultButton = document.querySelector('#button')
+const resultButton = document.querySelector('#next-button')
 const here = document.querySelector('#here')
 const svg = document.querySelector('#svg')
-
+const img = document.querySelector('#img')
 
 const ansList = [ans1, ans2, ans3, ans4]
 
@@ -19,47 +20,82 @@ const qna = {
     question1: {
         question: "What is the color of the sun?",
         right_answer: "Yellow",
+        img: "Colors/sun.png"
     },
     question2: {
         question: 'What is the color of the sea?',
-        right_answer: "Blue"
+        right_answer: "Blue",
+        img: "Colors/sea.png"
     },
     question3: {
         question: 'What is the color of the leaves?',
-        right_answer: "Green"
+        right_answer: "Green",
+        img: "Colors/leaves.png"
     },
     question4: {
         question: 'What is the color of the fire?',
-        right_answer: "Red"
+        right_answer: "Red",
+        img: "Colors/fire.png"
     },
     question5: {
         question: 'What is the color of the moon?',
-        right_answer: "White"
+        right_answer: "White",
+        img: "Colors/Moon.png"
     }, 
     question6: {
         question: 'What is the color of the orange?',
-        right_answer: "Orange"
+        right_answer: "Orange",
+        img: "Colors/orange.png"
     }, 
     question7: {
         question: 'What is the color of the cloud?',
-        right_answer: "White"
+        right_answer: "White",
+        img: "Colors/cloud.png"
     },
     question8: {
         question: 'What is the color of the rose?',
-        right_answer: "Red"
+        right_answer: "Red",
+        img: "Colors/Rose.png"
     },
     question9: {
         question: 'What is the color of the mango?',
-        right_answer: "Yellow"
+        right_answer: "Yellow",
+        img: "Colors/manggo.png"
     },
     question10: {
-        question: 'What is the color of the raid?',
-        right_answer: "Many Colors"
-    } 
+        question: 'What is the color of the heart?',
+        right_answer: "Red",
+        img: "Colors/heart.png"
+    }, 
+    question11: {
+        question: 'What is the color of the Flamingo?',
+        right_answer: "Pink",
+        img: "Colors/flamingo.png"
+    },
+    question12:{
+        question: 'What is the color of the lightning?',
+        right_answer: "White",
+        img: "Colors/lightning.png"
+    },
+    question13: {
+        question: 'What is the color of the Human blood?',
+        right_answer: "Red",
+        img: "Colors/blood.png"
+    },
+    question14: {
+        question: 'What is the color of the Galaxy?',
+        right_answer: "Black",
+        img: "Colors/space.png"
+    },
+    question15: {
+        question: 'What is the color of Banana?',
+        right_answer: "Yellow",
+        img: "Colors/banana.png"
+    },
 }
 let lastClick = false
 const questionArray = [qna.question1, qna.question2, qna.question3,
-    qna.question4, qna.question5, qna.question6,qna.question7,qna.question8,qna.question9,qna.question10]
+    qna.question4, qna.question5, qna.question6,qna.question7,qna.question8,qna.question9,qna.question10,qna.question11,qna.question12,qna.question13,qna.question14,qna.question15]
 const max_score = questionArray.length
 let indent = Math.floor(Math.random()*questionArray.length)
 
@@ -77,9 +113,11 @@ function questions(){
     }
 
 indent = Math.floor(Math.random()*questionArray.length)
-let choices = ["Red", "Pink", "Blue", "Orange", "Yellow", "Pink", "Black", "Green", "Many Colors"];
+let choices = ["Red", "Pink", "Blue", "Orange", "Yellow", "Pink", "Black", "Green","White"];
 choices[0] = questionArray[indent].right_answer
 let unique = Array.from(new Set(choices))
+
+img.setAttribute('src', questionArray[indent].img)
 question.innerText = questionArray[indent].question
 unique = [unique[0], unique[Math.floor(Math.random()*(3 - 1))+1],
               unique[Math.floor(Math.random()*(5 - 4))+4],
@@ -137,6 +175,7 @@ function last(){
     }
 clickedOnce = true  
 }
+
 console.log(score)
 questions()
 let clickedOnce = false
@@ -161,7 +200,7 @@ function replaceAnimation(element, last, New, delay = 0){
 }
 function DOMopen(){
     animationTime(result, 'scale-out-center')
-    animationTime(question, 'scale-in-ver-top', 100)
+    animationTime(label, 'scale-in-ver-top', 100)
     replaceAnimation(ans1, 'scale-out-center', 'scale-in-center', 400)
     replaceAnimation(ans2, 'scale-out-center', 'scale-in-center', 600)
     replaceAnimation(ans3, 'scale-out-center', 'scale-in-center', 800)
@@ -183,14 +222,8 @@ function DOMclose(){
         animationTime( ans3, 'scale-out-center', 800 ,'add')
         animationTime( ans4, 'scale-out-center', 1000 ,'add')
     }
-    animationTime( question, 'slide-out-bck-center', 1300)
+    animationTime( label, 'slide-out-bck-center', 1300)
     animationTime(result, 'scale-in-center', 1800)
     animationTime(resultButton, 'fade-in', 1800)
     eventListen = false
 } 
-
-
-
-
-
-

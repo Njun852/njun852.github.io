@@ -1,13 +1,17 @@
 const content = document.getElementById('contents')
 const question = document.querySelector("#question-content")
+const label = document.querySelector("#questions")
 const ans1 = document.querySelector('#answer1')
 const ans2 = document.querySelector('#answer2')
 const ans3 = document.querySelector('#answer3')
 const ans4 = document.querySelector('#answer4')
 const result = document.querySelector('#show-result')
-const resultButton = document.querySelector('#button')
+const resultButton = document.querySelector('#next-button')
 const here = document.querySelector('#here')
 const svg = document.querySelector('#svg')
+const sound = document.querySelector('#sound')
+const questionImg = document.querySelector("#question-img")
+const source = document.getElementById("#srcs")
 
 
 const ansList = [ans1, ans2, ans3, ans4]
@@ -19,47 +23,82 @@ const qna = {
     question1: {
         question: "What is the sound of a cow?",
         right_answer: "Mooo",
+        audio: "sound/Mooo.mp3"
     },
     question2: {
         question: 'What does the letter "A" sound like?',
-        right_answer: "Eey"
+        right_answer: "Eey",
+        audio: "sound/A.mp3"
     },
     question3: {
         question: 'What is the sound of a gunshot?',
-        right_answer: "Bang!"
+        right_answer: "Bang!",
+        audio: "sound/gun.mp3"
     },
     question4: {
         question: 'What is the sound of a cat?',
-        right_answer: "Meow"
+        right_answer: "Meow",
+        audio: "sound/Meow.mp3"
     },
     question5: {
         question: 'What is the sound of a bell?',
-        right_answer: "Ding!"
+        right_answer: "Ding!",
+        audio: "sound/bell.mp3"
     }, 
     question6: {
         question: 'What does the letter "O" sound like?',
-        right_answer: "Ow"
+        right_answer: "Ow",
+        audio: "sound/O.mp3"
     }, 
     question7: {
         question: 'What is the sound of a dog?',
-        right_answer: "Woof!"
+        right_answer: "Woof!",
+        audio: "sound/woof.mp3"
     },
     question8: {
         question: 'What is the sound of a car?',
-        right_answer: "Vroom!"
+        right_answer: "Vroom!",
+        audio: "sound/Vroom.mp3"
     },
     question9: {
         question: 'What is does the letter "J" sound like?',
-        right_answer: "Jeey"
+        right_answer: "Jeey",
+        audio: "sound/Jeey.mp3"
     },
     question10: {
         question: 'What is does the letter "X" sound like?',
-        right_answer: "Eeks"
-    } 
+        right_answer: "Eeks",
+        audio: ""
+    } ,
+    question11: {
+        question: 'What is the sound of bird?',
+        right_answer: "Tweet",
+        audio: "sound/Tweet.mp3"
+    },
+    question12: {
+        question: 'What is the sound of the thunder?',
+        right_answer: "Thud",
+        audio: "sound/Thud.mp3"
+    },
+    question13: {
+        question: 'What is the sound of the horning car?',
+        right_answer: "Beep!",
+        audio: "sound/Honking.mp3"
+    },
+    question14: {
+        question: 'What is the sound of whip?',
+        right_answer: "Whoosh!",
+        audio: "sound/Whoosh.mp3"
+    },
+    question15: {
+        question: 'What is the sound of Stomping Feet?',
+        right_answer: "Thud",
+        audio: "sound/Thud.mp3"
+    }
 }
 let lastClick = false
 const questionArray = [qna.question1, qna.question2, qna.question3,
-    qna.question4, qna.question5, qna.question6,qna.question7,qna.question8,qna.question9,qna.question10]
+    qna.question4, qna.question5, qna.question6,qna.question7,qna.question8,qna.question9,qna.question10,qna.question11,qna.question12,qna.question13,qna.question14,qna.question15]
 const max_score = questionArray.length
 let indent = Math.floor(Math.random()*questionArray.length)
 
@@ -77,9 +116,10 @@ function questions(){
     }
 
 indent = Math.floor(Math.random()*questionArray.length)
-let choices = ["Meow", "Psssh", "Kwerk", "Eks", "Woof!", "Meow!", "Bang!", "Bing!", "Owhh"];
+let choices = ["Meow", "Psssh", "Kwerk", "Eks", "Woof!", "Meow!", "Bang!", "Bing!", "Owhh","Tweet","Thud","Beep!", "Whoosh!"];
 choices[0] = questionArray[indent].right_answer
 let unique = Array.from(new Set(choices))
+sound.setAttribute('src', questionArray[indent].audio)
 question.innerText = questionArray[indent].question
 unique = [unique[0], unique[Math.floor(Math.random()*(3 - 1))+1],
               unique[Math.floor(Math.random()*(5 - 4))+4],
@@ -139,6 +179,9 @@ clickedOnce = true
 }
 console.log(score)
 questions()
+questionImg.addEventListener('click', ()=>{
+    sound.play()
+})
 let clickedOnce = false
 resultButton.addEventListener('click', last)
 
@@ -161,7 +204,7 @@ function replaceAnimation(element, last, New, delay = 0){
 }
 function DOMopen(){
     animationTime(result, 'scale-out-center')
-    animationTime(question, 'scale-in-ver-top', 100)
+    animationTime(label, 'scale-in-ver-top', 100)
     replaceAnimation(ans1, 'scale-out-center', 'scale-in-center', 400)
     replaceAnimation(ans2, 'scale-out-center', 'scale-in-center', 600)
     replaceAnimation(ans3, 'scale-out-center', 'scale-in-center', 800)
@@ -183,14 +226,11 @@ function DOMclose(){
         animationTime( ans3, 'scale-out-center', 800 ,'add')
         animationTime( ans4, 'scale-out-center', 1000 ,'add')
     }
-    animationTime( question, 'slide-out-bck-center', 1300)
+    animationTime( label, 'slide-out-bck-center', 1300)
     animationTime(result, 'scale-in-center', 1800)
     animationTime(resultButton, 'fade-in', 1800)
     eventListen = false
-} 
-
-
-
+}
 
 
 

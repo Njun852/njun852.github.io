@@ -26,7 +26,7 @@ stroke-linecap: round;
     stroke-linecap: round;
 }
 .load{
-    animation: load 0.5s linear forwards;
+    animation: load 3s linear forwards;
 }
 @keyframes load {
     100%{

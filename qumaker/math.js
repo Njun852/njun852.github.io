@@ -1,14 +1,15 @@
 const content = document.getElementById('contents')
 const question = document.querySelector("#question-content")
+const label = document.querySelector("#questions")
 const ans1 = document.querySelector('#answer1')
 const ans2 = document.querySelector('#answer2')
 const ans3 = document.querySelector('#answer3')
 const ans4 = document.querySelector('#answer4')
 const result = document.querySelector('#show-result')
-const resultButton = document.querySelector('#button')
+const resultButton = document.querySelector('#next-button')
 const here = document.querySelector('#here')
 const svg = document.querySelector('#svg')
-
+const img = document.querySelector('#img')
 
 const ansList = [ans1, ans2, ans3, ans4]
 
@@ -37,7 +38,7 @@ const qna = {
         right_answer: "1"
     }, 
     question6: {
-        question: 'What is 2 X 2?',
+        question: 'What is 2 + 2?',
         right_answer: "4"
     }, 
     question7: {
@@ -55,11 +56,31 @@ const qna = {
     question10: {
         question: 'What is 4 + 10?',
         right_answer: "14"
-    } 
+    },
+    question11: {
+        question: 'How many apples are there on the picture?',
+        right_answer: "6"
+    },
+    question12: {
+        question: 'What is the highest number below?',
+        right_answer: "64"
+    },
+    question13: {
+        question: 'What is the lowest number below?',
+        right_answer: "3"
+    },
+    question14: {
+        question: 'How many oranges are there on the picture?',
+        right_answer: "3"
+    },
+    question15: {
+        question: 'What is 5+20?',
+        right_answer: "25"
+    }
 }
 let lastClick = false
 const questionArray = [qna.question1, qna.question2, qna.question3,
-    qna.question4, qna.question5, qna.question6,qna.question7,qna.question8,qna.question9,qna.question10]
+    qna.question4, qna.question5, qna.question6,qna.question7,qna.question8,qna.question9,qna.question10,qna.question11,qna.question12,qna.question13,qna.question14,qna.question15]
 const max_score = questionArray.length
 let indent = Math.floor(Math.random()*questionArray.length)
 
@@ -77,7 +98,7 @@ function questions(){
     }
 
 indent = Math.floor(Math.random()*questionArray.length)
-let choices = ["6", "25", "3", "12", "64", "9", "21", "12", "3"];
+let choices = ["6", "25", "3", "12", "7", "9", "21", "12", "3", "19", "27"];
 choices[0] = questionArray[indent].right_answer
 let unique = Array.from(new Set(choices))
 question.innerText = questionArray[indent].question
@@ -160,7 +181,7 @@ function replaceAnimation(element, last, New, delay = 0){
 }
 function DOMopen(){
     animationTime(result, 'scale-out-center')
-    animationTime(question, 'scale-in-ver-top', 100)
+    animationTime(label, 'scale-in-ver-top', 100)
     replaceAnimation(ans1, 'scale-out-center', 'scale-in-center', 400)
     replaceAnimation(ans2, 'scale-out-center', 'scale-in-center', 600)
     replaceAnimation(ans3, 'scale-out-center', 'scale-in-center', 800)
@@ -182,14 +203,8 @@ function DOMclose(){
         animationTime( ans3, 'scale-out-center', 800 ,'add')
         animationTime( ans4, 'scale-out-center', 1000 ,'add')
     }
-    animationTime( question, 'slide-out-bck-center', 1300)
+    animationTime( label, 'slide-out-bck-center', 1300)
     animationTime(result, 'scale-in-center', 1800)
     animationTime(resultButton, 'fade-in', 1800)
     eventListen = false
 } 
-
-
-
-
-
-
