@@ -54,15 +54,10 @@ transform: translateX(-50%) translateY(-40%);
 #svg{
 margin-top: -3%;
 }
+
 }
 
-@media (max-width: 580px){
-#show-result{
-  width: 95%;
-  margin-left: 6.65%;
-  
-}
-}
+
 
 #next-button {
   margin-bottom: 1%;
@@ -172,6 +167,8 @@ margin-top: -3%;
 .slide-out-bck-center {
 -webkit-animation: slide-out-bck-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
         animation: slide-out-bck-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+       
+        
 }
 
 @-webkit-keyframes slide-out-bck-center {
@@ -185,6 +182,7 @@ margin-top: -3%;
             transform: translateZ(-1100px);
     opacity: 0;
     
+    
   }
 }
 @keyframes slide-out-bck-center {
@@ -197,6 +195,7 @@ margin-top: -3%;
     -webkit-transform: translateZ(-1100px);
             transform: translateZ(-1100px);
     opacity: 0;
+    
   }
 }
 
@@ -249,3 +248,81 @@ margin-top: -3%;
   visibility: visible;
 }
 }
+@media (max-width: 580px){
+  #show-result{
+    width: 95%;
+    margin-left: 6.65%;
+    
+  }
+  
+  @-webkit-keyframes slide-out-bck-center {
+    0% {
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+      opacity: 1;
+      margin-left: 0%;
+    }
+    100% {
+      -webkit-transform: translateZ(-1100px);
+              transform: translateZ(-1100px);
+      opacity: 0;
+      margin-left: 0%;
+      
+    }
+  }
+  @keyframes slide-out-bck-center {
+    0% {
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+      opacity: 1;
+      margin-left: 0%;
+    }
+    100% {
+      -webkit-transform: translateZ(-1100px);
+              transform: translateZ(-1100px);
+      opacity: 0;
+      margin-left: 0%;
+      
+    }
+  }
+  @-webkit-keyframes scale-in-ver-top {
+    0% {
+      -webkit-transform: scaleY(0);
+              transform: scaleY(0);
+      -webkit-transform-origin: 100% 0%;
+              transform-origin: 100% 0%;
+      opacity: 1;
+      visibility: visible;
+      margin-left: 0%;
+    }
+    100% {
+      -webkit-transform: scaleY(1);
+              transform: scaleY(1);
+      -webkit-transform-origin: 100% 0%;
+              transform-origin: 100% 0%;
+      opacity: 1;
+      visibility: visible;
+      margin-left: 0%;
+    }
+    }
+    @keyframes scale-in-ver-top {
+    0% {
+      -webkit-transform: scaleY(0);
+              transform: scaleY(0);
+      -webkit-transform-origin: 100% 0%;
+              transform-origin: 100% 0%;
+      opacity: 1;
+      visibility: visible;
+      margin-left: 0%;
+    }
+    100% {
+      -webkit-transform: scaleY(1);
+              transform: scaleY(1);
+      -webkit-transform-origin: 100% 0%;
+              transform-origin: 100% 0%;
+      opacity: 1;
+      visibility: visible;
+      margin-left: 0%;
+    }
+    }
+  }
