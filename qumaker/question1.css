@@ -3,6 +3,7 @@ body{
     padding: 0;
     font-family: 'Consolas';
     background-color: antiquewhite;
+    
 }
 
 #wrapper{
@@ -17,6 +18,7 @@ body{
     height: 3em;
     top: 0%;
     z-index: 2;
+    text-align: center;
 }
 
 #side{
@@ -48,7 +50,7 @@ grid-auto-rows: 30%;
 
 }
 p{
-    font-size: 4vh;
+    font-size: 30px;
     text-align: center;
 
 }
@@ -108,7 +110,7 @@ p{
     visibility: hidden;
     top:0;
     opacity: 0.5;
-    left: 20%;
+    
     position: fixed;
     width: 100%;
     height: 100%;
@@ -134,7 +136,7 @@ p{
     
 }
 
-#questions {
+#questions1 {
     display: flex;
     align-items: center;
     background-color: #ffec8f;
@@ -144,6 +146,8 @@ p{
     border:4px solid;
     margin-top: 4em;
     margin-left:10%;
+    position: relative;
+    overflow: hidden;
   }
   
   #question-content{
@@ -153,6 +157,7 @@ p{
     background-color: #ffec8f;
     text-align: center;
     font-size: 3.5em;
+    
   }
 
 #answers{
@@ -227,7 +232,12 @@ p{
     animation: slideback 0.3s ease-in-out forwards;
 }
 
-
+#title{
+    font-size: 35px;
+    font-weight: bolder;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-right: 2%;
+}
 
 @keyframes move {100%{top:40%}}
 @keyframes movebot{100%{top:75%}}
@@ -235,7 +245,11 @@ p{
 @keyframes topx{100%{transform: rotate(-40deg);}}
 @keyframes botx{100%{transform: rotate(40deg);}}
 @keyframes menu{100%{transform: rotate(0deg);}}
-
+@media (max-width: 390px){
+    #title{
+      margin-left: -6%;
+    }
+    }
 
 
   

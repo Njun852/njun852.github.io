@@ -12,6 +12,7 @@ const svg = document.querySelector('#svg')
 const sound = document.querySelector('#sound')
 const questionImg = document.querySelector("#question-img")
 const source = document.getElementById("#srcs")
+const txt = document.querySelector('#txt')
 
 
 const ansList = [ans1, ans2, ans3, ans4]
@@ -171,6 +172,7 @@ function last(){
         result.style.backgroundColor = '#ffec8f'
         loadbruh()
         svg.style.visibility = 'visible'
+        txt.style.visibility = 'visible'
         animationTime(circle, 'load',200, 'add')
     }else{
         DOMopen()
@@ -226,11 +228,11 @@ function DOMclose(){
         animationTime( ans3, 'scale-out-center', 800 ,'add')
         animationTime( ans4, 'scale-out-center', 1000 ,'add')
     }
-    animationTime( label, 'slide-out-bck-center', 1300)
+    animationTime( label, 'scale-out-ver-top', 1300)
     animationTime(result, 'scale-in-center', 1800)
     animationTime(resultButton, 'fade-in', 1800)
     eventListen = false
-}
+} 
 
 
 

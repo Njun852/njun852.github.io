@@ -10,6 +10,7 @@ const resultButton = document.querySelector('#next-button')
 const here = document.querySelector('#here')
 const svg = document.querySelector('#svg')
 const img = document.querySelector('#img')
+const txt = document.querySelector('#txt')
 
 const ansList = [ans1, ans2, ans3, ans4]
 
@@ -169,6 +170,7 @@ function last(){
         result.style.backgroundColor = '#ffec8f'
         loadbruh()
         svg.style.visibility = 'visible'
+        txt.style.visibility = 'visible'
         animationTime(circle, 'load',200, 'add')
     }else{
         DOMopen()
@@ -222,7 +224,7 @@ function DOMclose(){
         animationTime( ans3, 'scale-out-center', 800 ,'add')
         animationTime( ans4, 'scale-out-center', 1000 ,'add')
     }
-    animationTime( label, 'slide-out-bck-center', 1300)
+    animationTime( label, 'scale-out-ver-top', 1300)
     animationTime(result, 'scale-in-center', 1800)
     animationTime(resultButton, 'fade-in', 1800)
     eventListen = false
