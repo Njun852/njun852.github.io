@@ -244,6 +244,7 @@ p{
     font-weight: bolder;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     margin-right: 2%;
+    
 }
 @keyframes move {100%{top:40%}}
 @keyframes movebot{100%{top:75%}}
@@ -255,5 +256,6 @@ p{
 @media (max-width: 390px){
     #title{
       margin-left: -6%;
+      
     }
     }
